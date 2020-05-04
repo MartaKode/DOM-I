@@ -107,6 +107,37 @@ const footer = document.querySelector('footer');
 footer.textContent = siteContent['footer']['copyright']
 
 
+//Task 3
+
+
+//for(element of nav){element.style.color = "green"};
+nav.forEach( link => link.style.color = 'green');
+
+
+const newLink1 = document.createElement('a');
+newLink1.textContent = `Meow`;
+newLink1.href = '#';
+newLink1.style.color = 'pink'
+
+const navigation = document.querySelector('nav');
+navigation.appendChild(newLink1);
+
+const newLink2 = document.createElement('a');
+newLink2.textContent = `Woof`;
+newLink2.href = '#';
+newLink2.style.color = 'blue';
+
+navigation.prepend(newLink2)
+
+
+
+
+//("navigation").prepend("some text here");
+
+
+
+
+
 
 
 
