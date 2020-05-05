@@ -53,7 +53,7 @@ const link1 = document.querySelector('nav a');
 // nav[4].textContent = siteContent.nav['nav-item-5'] ;
 // nav[5].textContent = siteContent.nav['nav-item-6'] ;
 
-//Q&A trickS: 
+//Q&A trick : nav section 
 navArray = Array.from(nav);
 
 const navTexts = Object.values(siteContent.nav);
@@ -64,7 +64,7 @@ navArray.forEach((link, idx) => {
 
 //end of Q&A
 
-//Updating more imgs: 
+//Updating  imgs: 
 const ctaImg = document.getElementById('cta-img');
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
@@ -73,21 +73,27 @@ middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
 //Updating text
 
+//H1s
 const theH1 = document.querySelector('h1');
 theH1.textContent = siteContent['cta']['h1'];
 
 
+//buttons 
 const btn = document.querySelector('button');
 btn.textContent = siteContent['cta']['button'];
 
+
+//H4's
 document.querySelector('h4').textContent = siteContent['main-content']['features-h4']
 const theH4s = document.querySelectorAll('h4');
 theH4s[1].textContent= siteContent['main-content']['about-h4'];
 theH4s[2].textContent = siteContent['main-content']['services-h4'];
 theH4s[3].textContent = siteContent['main-content']['product-h4'];
 theH4s[4].textContent = siteContent['main-content']['vision-h4'];
-theH4s[5].textContent = siteContent['contact']['contact-h4'];
+//theH4s[5].textContent = siteContent['contact']['contact-h4'];
 
+
+//Paragraphs
 const paraphs = document.querySelectorAll('.main-content p');
 document.querySelector('.main-content p').textContent = siteContent['main-content']['features-content'];
 paraphs[1].textContent = siteContent['main-content']['about-content'];
@@ -95,16 +101,27 @@ paraphs[2].textContent = siteContent['main-content']['services-content'];
 paraphs[3].textContent = siteContent['main-content']['product-content'];
 paraphs[4].textContent = siteContent['main-content']['vision-content'];
 
+//Contact sections: 
+
 //const contacth4 = document.querySelector('.contact h4');
 //contacth4.textContent = siteContent['contact']['contact-h4'];
 
-const contactPs = document.querySelectorAll('.contact p');
-contactPs[0].textContent = siteContent['contact']['address'];
-contactPs[1].textContent = siteContent['contact']['phone'];
-contactPs[2].textContent = siteContent['contact']['email'];
+ const contactPs = document.querySelectorAll('.contact p');
+// contactPs[0].textContent = siteContent['contact']['address'];
+// contactPs[1].textContent = siteContent['contact']['phone'];
+// contactPs[2].textContent = siteContent['contact']['email'];
 
+contactArray = Array.from(contactPs)
+contactArray.unshift(document.querySelector('.contact h4'))
+const contactTexts = Object.values(siteContent['contact']);
+
+contactArray.forEach( (item, idx) => item.textContent = contactTexts[idx])
+
+
+//Footer Section: 
 const footer = document.querySelector('footer');
 footer.textContent = siteContent['footer']['copyright']
+
 
 
 //Task 3
@@ -125,14 +142,10 @@ navigation.appendChild(newLink1);
 const newLink2 = document.createElement('a');
 newLink2.textContent = `Woof`;
 newLink2.href = '#';
-newLink2.style.color = 'blue';
+newLink2.style.color = 'blue';''
 
 navigation.prepend(newLink2)
 
-
-
-
-//("navigation").prepend("some text here");
 
 
 
